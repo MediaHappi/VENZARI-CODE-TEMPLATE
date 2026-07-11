@@ -1,0 +1,8 @@
+{
+  "id": "INIT-002-fill-in-golden-rules",
+  "title": "Add project-specific rules to GOLDEN_RULES.md",
+  "priority": "medium",
+  "description": "Fill in the 'Project-Specific Rules' section at the bottom of GOLDEN_RULES.md with rules specific to your technology stack, team conventions, and infrastructure.",
+  "status": "pending",
+  "createdAt": "2026-07-11T00:00:00.000Z"
+}

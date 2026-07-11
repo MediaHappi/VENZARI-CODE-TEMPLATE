@@ -1,0 +1,8 @@
+{
+  "id": "INIT-001-fill-in-context",
+  "title": "Fill in CONTEXT.md and CURRENT_STATE.md",
+  "priority": "high",
+  "description": "Update all [FILL IN] sections in CONTEXT.md and system-map/CURRENT_STATE.md with your actual project state. Run drift_scanner.py after to confirm no placeholders remain.",
+  "status": "pending",
+  "createdAt": "2026-07-11T00:00:00.000Z"
+}

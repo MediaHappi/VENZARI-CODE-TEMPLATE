@@ -1,0 +1,46 @@
+# VENZARI CODE skeleton .gitignore
+
+# Secrets — never commit these
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# VENZARI CODE runtime state (session-local, not committed)
+.venzari/handoffs/
+.venzari/agents/reflections/
+.venzari/session.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Task archive (completed tasks — keep pending ones)
+.tasks/.archive/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Node (if applicable)
+node_modules/
+
+# Build artifacts
+dist/
+build/
