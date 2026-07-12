@@ -1,6 +1,6 @@
 # Agent Skill Catalog
 
-**Total native skills: 21** | Updated: [FILL IN] | Source: `python3 ops/agent/skill_loader.py count`
+**Total native skills: 21** | **Total vendor skills: 216** | **Grand total: 237** | Updated: 2026-07-11 | Source: `python3 ops/agent/skill_loader.py count`
 **Vendor skill packs:** See `agents/vendors/` (216 skills across 10 collections — added in Phase 9c)
 **Operators: 3** (deploy-feature, audit-and-fix, claim-and-execute) — see `agents/operators/`
 **Skill format:** v2.0 Brief/Detail/Reference progressive disclosure
@@ -144,23 +144,48 @@ Operators chain multiple skills. Use these instead of manually sequencing.
 
 ---
 
-## Section 3: Vendor Skills
+## Section 3: Vendor Skills (216 skills across 11 collections)
 
-> **Phase 9c** installs 216 vendor skills into `agents/vendors/`.
-> Until then, install manually: `cp -r /path/to/vendor-pack agents/vendors/<name>`
+All vendor skills installed at `agents/vendors/`. Load any skill:
+`python3 ops/agent/skill_loader.py load <collection>/<skill-name>`
 
-| Collection | Count | Domain |
-|---|---|---|
-| `agent-skills` (addyosmani) | 23 | General engineering patterns |
-| `mattpocock` | 24 | TypeScript mastery, productivity |
-| `ruflo` (ruvnet) | 38 | AI orchestration, SPARC framework |
-| `n8n-skills` (czlonkowski) | 7 | n8n workflow automation |
-| `zebbern-security` | 29 | Security / pentest patterns |
-| `trailofbits` | 73 | Smart contract + supply chain security |
-| `alirezarezvani` | varies | Platform operations |
-| `aman-bhandari` | varies | Rule governance |
-| `anthropics` | 1 | Official SKILL.md format spec |
-| `levnikolaevich` | 1 | Hash-verified file editing |
+| Collection | SKILL.md | Domain | Source |
+|---|---|---|---|
+| `trailofbits-skills` | 73 | Smart contract + supply chain security | Trail of Bits |
+| `ruflo-skills` | 38 | AI orchestration, SPARC, swarm patterns | ruvnet/ruflo |
+| `zebbern-security` | 29 | Security / pentest / ethical hacking | zebbern |
+| `mattpocock-skills` | 28 | TypeScript mastery, productivity, PRDs | mattpocock |
+| `agent-skills` | 23 | General engineering patterns | addyosmani/agent-skills |
+| `alirezarezvani` | 15 | Platform ops, container health, cron audit | alirezarezvani |
+| `n8n-skills` | 7 | n8n workflow, expressions, MCP, nodes | czlonkowski |
+| `claude-code-harness` | 0 (37 docs) | Claude Code integration patterns | claude-code-harness |
+| `anthropics` | 1 | Official SKILL.md format specification | Anthropic |
+| `levnikolaevich` | 1 | Hash-verified hex-line file editing | levnikolaevich |
+| `aman-bhandari` | 1 | Rule obsolescence audit | aman-bhandari |
+| **Total** | **216** | | |
+
+**Quick vendor picks:**
+
+| Task | Vendor skill |
+|---|---|
+| Deep codebase diagnosis | `mattpocock-skills/engineering/diagnose` |
+| TDD (mattpocock style) | `mattpocock-skills/engineering/tdd` |
+| Turn specs into GitHub issues | `mattpocock-skills/engineering/to-issues` |
+| Create a PRD | `mattpocock-skills/engineering/to-prd` |
+| Triage a codebase | `mattpocock-skills/engineering/triage` |
+| Write a handoff note | `mattpocock-skills/productivity/handoff` |
+| Create a new skill | `mattpocock-skills/productivity/write-a-skill` |
+| SPARC framework | `ruflo-skills/sparc/` |
+| AI swarm orchestration | `ruflo-skills/swarm/` |
+| Smart contract audit | `trailofbits-skills/` |
+| Cloud pentest | `zebbern-security/` |
+| Container health matrix | `alirezarezvani/container-health-matrix` |
+| Prune stale task branches | `alirezarezvani/git-branch-cleanup` |
+| Audit cron jobs | `alirezarezvani/cron-audit` |
+| SSH tunnel test | `alirezarezvani/ssh-tunnel-test` |
+| Hash-verified editing | `levnikolaevich/hex-line-edit` |
+| Rule obsolescence review | `aman-bhandari/rule-obsolescence-audit` |
+| SKILL.md format spec | `anthropics/skill-format-spec` |
 
 ---
 
