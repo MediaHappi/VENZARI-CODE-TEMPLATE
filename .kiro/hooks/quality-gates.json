@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "description": "Quality gates for VENZARI CODE template projects",
+  "hooks": {
+    "pre-commit": {
+      "steps": [
+        {
+          "name": "typecheck",
+          "command": "bun run typecheck",
+          "failOn": "any-error",
+          "description": "TypeScript must compile with 0 errors"
+        },
+        {
+          "name": "tests",
+          "command": "bun test",
+          "failOn": "any-failure",
+          "description": "All tests must pass"
+        }
+      ]
+    },
+    "pre-task-complete": {
+      "steps": [
+        {
+          "name": "pre-flight",
+          "command": "python3 ops/agent/pre_flight.py",
+          "failOn": "non-zero-exit",
+          "description": "Pre-flight validation before marking task complete"
+        },
+        {
+          "name": "evidence-check",
+          "command": "python3 ops/agent/evidence_validator.py",
+          "failOn": "non-zero-exit",
+          "description": "Evidence must be real command output, not descriptions"
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Customize commands for your stack (replace bun with npm/pnpm/yarn if needed)",
+    "Add python3 ops/agent/closing_gate_v5_real_work.py to pre-task-complete for full enforcement",
+    "See ops/agent/README.md for gate configuration"
+  ]
+}

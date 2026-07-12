@@ -1,46 +1,61 @@
-# VENZARI CODE skeleton .gitignore
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
 
-# Secrets — never commit these
+# Environment
 .env
-.env.local
-.env.*.local
-*.pem
-*.key
-id_rsa
-id_ed25519
+.env.*
+!.env.example
 
-# VENZARI CODE runtime state (session-local, not committed)
-.venzari/handoffs/
-.venzari/agents/reflections/
-.venzari/session.json
+# AI / Vector DBs
+chromadb/
+*.db
+*.sqlite
+*.sqlite3
+chroma_db/
+vector_store/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Node / Bun
+node_modules/
+dist/
+.next/
+.nuxt/
+
+# Python venv
+venv/
+.venv/
+env/
+
+# Memory system (runtime data, not template)
+.advisors/*.json
+.codegraph/*.json
+.team/inbox/*.jsonl
+
+# Worktrees
+.worktrees/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Editor
-.vscode/
+# IDE
 .idea/
+.vscode/settings.json
 *.swp
 *.swo
 
-# Logs
-*.log
-logs/
-
-# Task archive (completed tasks — keep pending ones)
-.tasks/.archive/
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-.venv/
-venv/
-
-# Node (if applicable)
-node_modules/
-
-# Build artifacts
-dist/
-build/
+# Secrets
+*.pem
+*.key
+secrets/

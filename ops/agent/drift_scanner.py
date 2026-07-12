@@ -101,7 +101,7 @@ def run_checks() -> list[dict]:
     this_file = Path(__file__).resolve()
     legacy_found = False
     legacy_detail = ""
-    legacy_terms = ["JEANNE-CTO", "jeannebrain", "158.220.105.107"]
+    legacy_terms = ["YOUR-PROJECT", "jeannebrain", "158.220.105.107"]
     for f in REPO_ROOT.rglob("*"):
         if f.is_dir() or ".git" in str(f) or "node_modules" in str(f):
             continue
